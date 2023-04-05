@@ -16,3 +16,9 @@ Mirunatti is mini electronic pet　inside your smartphone case. Mirunatti is too
 - Press both a, b and lid swith, load status
 - Auto save in 10 miniute
 
+## Hardware
+- microbit v1~
+- smartphone case holding microbit and lid switch
+- pin 0 pulled down, conneted to lid switch (normal open),
+- When case is opened, lid switch is pushed, thus the circuit will close and pin 0 will UP.
+

@@ -152,19 +152,6 @@ IMAGE_LOVE = [Image.HEART_SMALL, Image.HEART]
 ######################################
 #関数定義
 
-# ボタンのラッパーさえ削らなければならなかった
-#def chk_used():
-#    return not pin0.read_digital()
-
-#def chk_button_reset():
-#    return (button_a.is_pressed() and button_b.is_pressed())
-
-#def chk_button_emotion():
-#    return button_a.is_pressed()
-
-#def chk_button_status():
-#    return button_b.is_pressed()
-
 # どの顔を表示するか決める
 def determine_face(age, alert,death):
     if death == True:
@@ -208,18 +195,6 @@ def draw_face(face):
 def draw_status(timer):
     display.scroll(timer,wait=True)
 
-# 感情の表示（全機能版）、S/M/Lどの種類でやばいか表示できた
-#def draw_emotion(al_s,al_m,al_l):
-#    if al_s == True:
-#        display.show(IMAGE_SAD_SMALL,delay=500,loop=True,wait=False)
-#    elif al_m == True:
-#        display.show(IMAGE_SAD_MEDUIM,delay=500,loop=True,wait=False)
-#    elif al_l == True:
-#        display.show(IMAGE_SAD_LARGE,delay=500,loop=True,wait=False)
-#    else:
-#        display.show(IMAGE_LOVE,delay=500,loop=True,wait=False)
-#    utime.sleep_ms(4*PERIOD)
-
 # 感情の表示・機能制限版、やばいかやばくないかだけ表示。
 def draw_emotion(alert):
     if alert:
@@ -246,36 +221,6 @@ def save(data):
 def load():
     with open("save","r") as f:
         return int(f.read())
-
-# 以下、本来のフル機能のセーブ・ロード関数
-#def save(GT,ST,MT,LT,):
-#    with open("saveGT","w") as sGT:
-#        sGT.write(str(GT))#
-#
-#    with open("saveST","w") as sST:
-#        sST.write(str(ST))
-#    
-#    with open("saveMT","w") as sMT:
-#        sMT.write(str(MT))##
-#
-#    with open("saveLT","w") as sLT:
-#        sLT.write(str(LT))   
-    
-#def load():
-##    data = []
-#    with open("saveGT","r") as sGT:
-#        data[0] = int(sGT.read())
-#
-##    with open("saveST","r") as sST:
-#        data[1] = int(sST.read())
-#
-#    with open("saveMT","r") as sMT:
-#        data[2] = int(sMT.read())
-#
-#    with open("saveLT","r") as sLT:
-#       data[3] = int(sLT.read())
-#
-#    return data
 
 ###############################################################################
 # main function
@@ -311,17 +256,16 @@ def main():
     
     while True:
 
-        # タイマー加算
+        # グローバルタイマー加算
         Global_Timer += 1      
-        Small_Timer += 1
-        Medium_Timer += 1
-        Large_Timer += 1
         
         if (Global_Timer % SAVE_PERIOD )== 0:  # オートセーブ
             save(Global_Timer)
         
         if Death:
             Global_Timer -= 1
+
+        Global_Timer += 1
 
         ##########################################    
         # 閉じているときのルーチン
@@ -351,7 +295,11 @@ def main():
         # aでアラート（感情）確認
         if button_a.is_pressed():
            draw_emotion(Alert)
-      
+        
+        # 他のタイマー加算
+        Small_Timer += 1
+        Medium_Timer += 1
+        Large_Timer += 1
     
          # スモールタイマー系チェック
         Alert_Small = chk_time(Small_Timer,ALERT_SMALL)

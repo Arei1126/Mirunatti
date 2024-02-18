@@ -1,5 +1,5 @@
 # Mirunatti
-Shikake for Reducing Screen Timer for microbit
+Digital ped living in your smartphone case, Reducing Screen Timer for microbit
 
 ## Description
 Mirunatti is mini electronic pet　inside your smartphone case. Mirunatti is too shy to been watched, so you might not watch it (and your phone) too much or it will die. 
@@ -16,6 +16,36 @@ Mirunatti is mini electronic pet　inside your smartphone case. Mirunatti is too
 - Press both a, b and lid swith, load status
 - Auto save in 10 miniute
 
+## Growth (good condition|bad condition)
+Egg: 0 ~ 30min after birth
+<pre>
+@@@  |  @
+@ @  | @ @
+@@@  | @@
+</pre>
+
+Child: 30min ~ 4h after birth
+<pre>
+ @ @  |  @ @
+      |  
+ @ @  |   @
+  @   |  @ @
+</pre>
+Adult: 4h ~ after birth
+<pre>
+  @  @  |  @  @
+        |  
+  @  @  |   @@
+   @@   |  @  @
+</pre>
+
+Death: exceeded limit
+<pre>
+  @  
+ @@@
+  @
+@@@@@
+</pre>
 ## Hardware
 - microbit v1~
 - smartphone case holding microbit and lid switch

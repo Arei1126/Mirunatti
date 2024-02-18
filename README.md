@@ -1,6 +1,6 @@
 # Mirunatti
-Digital ped living in your smartphone case, Reducing Screen Timer for microbit
-![IMG_20240218_190226](https://github.com/Arei1126/Mirunatti/assets/103196861/30062c94-e934-4931-a7ba-5ccf3c947249)
+Digital pet living in your smartphone case, Reducing Screen Timer for microbit
+![miruatti](https://github.com/Arei1126/Mirunatti/assets/103196861/efbec6ed-9d85-4cb6-941d-41cd11124130)
 
 ## Description
 Mirunatti is mini electronic pet　inside your smartphone case. Mirunatti is too shy to been watched, so you might not watch it (and your phone) too much or it will die. 
